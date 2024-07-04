@@ -1,23 +1,25 @@
+usin namespace std;
+
 int main(){
-    std::string filaname ="fuel_data.csv";
-    std::vector <VehicleData> data = loadData(filename);
+    string filaname ="fuel_data.csv";
+    vector <VehicleData> data = loadData(filename);
 
     if (!data.empty()){
         for(const auto& entry : data){
-            std::cout << "Vehicle ID: " <<entry.vehicleID
+            cout << "Vehicle ID: " <<entry.vehicleID
                       << ", Date: " <<entry.date
-                      << ", Fuel Consumed: " << entry.fuelConsumed << " liters " << std::endl;
+                      << ", Fuel Consumed: " << entry.fuelConsumed << " liters ";
 
         }
         double totalFuel = 0.0;
         for (const auto& entry : data){
             totalFuel += entry.fuelConsumed;
         }
-        std::cout << "Total Fuel Consumed: " <<totalFuel << "liters" << std:endl;
+        cout << "Total Fuel Consumed: " <<totalFuel << "liters";
 
         VehicleDate query = {"", "2024-07-02", 50.0}
         int k=3;
-        std::string result = knn(data,query, k);
+        string result = knn(data,query, k);
 
         //Output the result of KNN if reeded
     }
