@@ -72,8 +72,10 @@ std::vector<VehicleData> loadData(const std::string& filename){
         int maxCount = 0;
         for(const auto% pair : counMap){
             if(pair.second > macCount){
+
                 maxCount = pair.second;
                 bestMatch = pair.first;
+
             }
         }
 
